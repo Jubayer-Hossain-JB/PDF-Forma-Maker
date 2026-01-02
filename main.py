@@ -9,9 +9,6 @@ from multiprocessing import Process, freeze_support
 # import run
 from os.path import splitext, dirname, join, basename
 from os import mkdir
-from os import popen
-from socket import socket, gethostname
-from sys import exit
 
 from PyPDF2 import PdfReader, PdfWriter, PageObject, Transformation
 import math
@@ -310,11 +307,5 @@ if __name__ == "__main__":
     freeze_support()
     engine = PdfStack()
     root = Gui()
-    try:
-        s = socket()
-        host = gethostname()
-        port = 12345
-        s.bind((host, port))
-    except:
-        exit()
     root.mainloop()
+
